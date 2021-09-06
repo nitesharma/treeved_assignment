@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:treeved/Notifications/notification.dart';
 
@@ -29,10 +30,12 @@ class CustomAppbar extends StatelessWidget {
             height: 35,
             width: 35,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                image: DecorationImage(
-                    image: AssetImage('assets/profile.jpg'),
-                    fit: BoxFit.cover)),
+              borderRadius: BorderRadius.circular(8),
+              image: DecorationImage(
+                  image: CachedNetworkImageProvider(
+                      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80'),
+                  fit: BoxFit.cover),
+            ),
           ),
         ],
       ),
